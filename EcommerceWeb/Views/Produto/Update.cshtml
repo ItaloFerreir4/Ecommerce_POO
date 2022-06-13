@@ -1,0 +1,40 @@
+@using EcommerceWeb.Models
+@model Produto
+
+@{
+    Layout = "/Views/Layout.cshtml";
+    ViewBag.Title = "Atualiza Produto";
+}
+
+<div>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/Produto/Index">Produtos</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Atualiza Produto</li>
+    </ol>
+</div>
+
+<form action="/Produto/Update/@Model.IdProduto" method="POST">
+    <div>
+        <label>Nome</label>
+        <input type="text" class="form-control" name="Nome" value="@Model.Nome"/>
+    </div>
+
+    <div>
+        <label>Descrição</label>
+        <textarea name="Descricao" class="form-control">@Model.Descricao</textarea>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <label>Preço</label>
+            <input type="number" class="form-control" name="Preco" value="@Model.Preco"/>
+        </div>
+
+        <div class="col-6">
+            <label>Desconto</label>
+            <input type="number" class="form-control" name="Desconto" value="@Model.Desconto"/>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" style="margin-top: 20px">Salvar</button>
+</form>

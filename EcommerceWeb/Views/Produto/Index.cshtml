@@ -1,0 +1,22 @@
+@using EcommerceWeb.Models
+@{
+    Layout = "/Views/Layout.cshtml";
+    ViewBag.Title = "Produtos";
+}
+
+<table class="table table-hover">
+    @foreach(Produto p in Model)
+    {
+    <tr>
+        <td>@p.IdProduto</td>
+        <td>@p.Nome</td>
+        <td>@p.Preco</td>
+        <td>
+            <a href="/Produto/Delete/@p.IdProduto">Apagar</a>
+            <a href="/Produto/Update/@p.IdProduto">Editar</a>
+        </td>
+    </tr>
+    }
+</table>
+
+<a href="/Produto/Create" class="btn btn-primary">Adicionar</a>

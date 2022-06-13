@@ -1,0 +1,17 @@
+@{
+    Layout = "/Views/Layout.cshtml";
+    ViewBag.Title = "Promoções";
+}
+
+<table class="table table-hover">
+    @foreach (var produto in Model)
+    {
+    <tr>
+        <td>@produto.Nome</td>
+        <td>@produto.Preco</td>
+        <td>@produto.Desconto</td>
+        <td>@produto.ValorFinal.ToString("c")</td>
+    </tr>
+    }
+</table>
+        
